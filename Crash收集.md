@@ -46,6 +46,6 @@
         优点:集成方便快速, 一般都有完善的管理面板,并已经完全符号化.
         注意点: 引入多个会导致 NSSetUncaughtExceptionHandler()函数指针被覆盖. 这个函数是将函数指针当参数传递, 只要重复调用就会被覆盖.
 
-
+[官方文档] ( https://developer.apple.com/library/content/technotes/tn2151/_index.html)
     
 
