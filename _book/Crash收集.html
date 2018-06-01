@@ -1,0 +1,293 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2018年6月1日 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./#一个工作学习笔记本">
+            
+                    
+                    导引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./#单例滥用的坏处">
+            
+                    
+                    2018年5月记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Crash收集.html">
+            
+                <a href="Crash收集.html">
+            
+                    
+                    2018年6月1日
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2018年6月1日</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ios-crash&#x6536;&#x96C6;--2018-06-01">iOS Crash&#x6536;&#x96C6;- 2018-06-01</h1>
+<p>&#x9879;&#x76EE;&#x5D29;&#x6E83;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x6700;&#x5927;&#x803B;&#x8FB1;, &#x7EE9;&#x6548;&#x8003;&#x5BDF;&#x7684;&#x91CD;&#x8981;&#x6307;&#x6807;, &#x4E00;&#x65E6;&#x5D29;&#x6E83;&#x53D1;&#x751F;. &#x4FEE;&#x590D;&#x5B83;&#x6210;&#x4E3A;&#x6700;&#x7D27;&#x8981;&#x7684;&#x4E8B;&#x60C5;,&#x5728;&#x8C03;&#x8BD5;&#x9636;&#x6BB5;&#x8FD8;&#x80FD;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x67E5;&#x770B;&#x8C03;&#x7528;&#x5806;&#x6808;. &#x800C;&#x5BF9;&#x4E8E;&#x7EBF;&#x4E0A;&#x7684;APP, &#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7; NSSetUncaughtExceptionHandler (&amp;UncaughtExceptionHandler),&#x6765;&#x81EA;&#x52A8;&#x83B7;&#x53D6;&#x5D29;&#x6E83;&#x65F6;&#x7684;&#x8C03;&#x7528;&#x6808;,&#x5E76;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;(1. &#x672C;&#x5730;&#x5316;&#x5B58;&#x50A8; 2,&#x53D1;&#x9001;&#x5E26;&#x5D29;&#x6E83;&#x4FE1;&#x606F;&#x7684;&#x90AE;&#x4EF6; 3, &#x53D1;&#x9001;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5668;)</p>
+<h2 id="1-&#x82F9;&#x679C;&#x81EA;&#x5E26;crash&#x6536;&#x96C6;&#x670D;&#x52A1;">1. &#x82F9;&#x679C;&#x81EA;&#x5E26;Crash&#x6536;&#x96C6;&#x670D;&#x52A1;</h2>
+<h4 id="a&#x67E5;&#x770B;itunes-connect&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;--&#x6253;&#x5F00;&#x5F00;&#x53D1;&#x8005;&#x8D26;&#x53F7;&#x8FDB;&#x5165;-itunes-connectmanage-your-applications---view-details---crash-reports-">a.&#x67E5;&#x770B;iTunes connect&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;.  &#x6253;&#x5F00;&#x5F00;&#x53D1;&#x8005;&#x8D26;&#x53F7;&#x8FDB;&#x5165; iTunes Connect(Manage Your Applications - View Details - Crash Reports) <img src="https://raw.githubusercontent.com/Pangmanli1/gitbook/master/Images/nested/app&#x5206;&#x6790;.jpg" alt="itunes app&#x5206;&#x6790;"></h4>
+<h4 id="b&#x901A;&#x8FC7;xcode&#x5B9A;&#x4F4D;-a&#x4E2D;&#x7EDF;&#x8BA1;&#x7248;&#x672C;&#x7684;-bug&#x53D1;&#x751F;&#x7684;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;-&#x901A;&#x8FC7;&#x7EDF;&#x8BA1;bug-&#x53D1;&#x751F;&#x7684;&#x7248;&#x672C;&#x53F7;&#x6570;&#x91CF;&#x7B49;&#x4FE1;&#x606F;-&#x6253;&#x5F00;xcode&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#x7684;&#x5D29;&#x6E83;&#x65E5;&#x5FD7;xcode---window---organizer---crashes&#x5C06;&#x9F20;&#x6807;&#x632A;&#x52A8;&#x5230;&#x5D29;&#x6E83;&#x7684;&#x5730;&#x65B9;&#x51FA;&#x73B0;&#x7BAD;&#x5934;&#x70B9;&#x51FB;&#x5B9A;&#x4F4D;">b.&#x901A;&#x8FC7;xcode&#x5B9A;&#x4F4D; a&#x4E2D;&#x7EDF;&#x8BA1;&#x7248;&#x672C;&#x7684; bug&#x53D1;&#x751F;&#x7684;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;. &#x901A;&#x8FC7;&#x7EDF;&#x8BA1;bug &#x53D1;&#x751F;&#x7684;&#x7248;&#x672C;&#x53F7;&#x6570;&#x91CF;&#x7B49;&#x4FE1;&#x606F;, &#x6253;&#x5F00;xcode&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#x7684;&#x5D29;&#x6E83;&#x65E5;&#x5FD7;(xcode -&gt; window -&gt; organizer -&gt; crashes),&#x5C06;&#x9F20;&#x6807;&#x632A;&#x52A8;&#x5230;&#x5D29;&#x6E83;&#x7684;&#x5730;&#x65B9;&#x51FA;&#x73B0;&#x7BAD;&#x5934;,&#x70B9;&#x51FB;&#x5B9A;&#x4F4D;.</h4>
+<p>&#x4EE5;&#x4E0A;&#x6536;&#x96C6;crash&#x529F;&#x80FD;&#x9700;&#x8981;&#x7528;&#x6237;&#x6253;&#x5F00; &#x8BBE;&#x7F6E;-&gt; &#x9690;&#x79C1; -&gt; &#x5206;&#x6790; -&gt; &#x5171;&#x4EAB;iPhone &#x5206;&#x6790; -&gt; &#x4E0E;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x8005;&#x5171;&#x4EAB; &#x7136;&#x540E;&#x624D;&#x80FD;&#x81EA;&#x52A8;&#x53D1;&#x9001;</p>
+<h2 id="2-&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x5E94;&#x7528;&#x5185;&#x5D29;&#x6E83;&#x6536;&#x96C6;&#x5E76;&#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x5668;">2. &#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x5E94;&#x7528;&#x5185;&#x5D29;&#x6E83;&#x6536;&#x96C6;,&#x5E76;&#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x5668;</h2>
+<ul>
+<li><p>NSSetUncaughtExceptionHandler</p>
+<pre><code>  &#x5728;app&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#x5229;&#x7528;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x7C7B;&#x6765;&#x76D1;&#x542C;&#x5D29;&#x6E83;, NSSetUncaughtExceptionHandler (&amp;UncaughtExceptionHandler), UncaughtExceptionHandler&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;,&#x5D29;&#x6E83;&#x53D1;&#x751F;&#x540E;, &#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F1A;&#x4F20;&#x5165;&#x4E00;&#x4E2A;NSException&#x7684;&#x7C7B;. &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5B83;&#x6765;&#x83B7;&#x53D6;&#x8C03;&#x7528;&#x6808;,&#x5D29;&#x6E83;&#x7684;&#x539F;&#x56E0;&#x53CA;&#x5F02;&#x5E38;&#x7684;&#x7C7B;&#x578B;. 
+
+  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+     NSSetUncaughtExceptionHandler(&amp;UncaughtExceptionHandler);
+
+     return YES;
+     }
+</code></pre></li>
+</ul>
+<pre><code>       void UncaughtExceptionHandler(NSException * exception){
+
+       NSArray * exceptionSymbols =  exception.callStackSymbols;
+
+       NSString * reason = exception.reason;
+
+       NSString * name  = exception.name;
+
+       NSLog(@&quot;exceptionCallSymbols---%@, reason--- %@  ----name %@&quot;,exceptionSymbols,reason,name);
+
+       //&#x83B7;&#x53D6;&#x5230;&#x5D29;&#x6E83;&#x65E5;&#x5FD7;&#x540E;,&#x53EF;&#x4EE5;&#x5C06;&#x5D29;&#x6E83;&#x4FE1;&#x606F;&#x5B58;&#x5165;&#x672C;&#x5730;,&#x4E0B;&#x6B21;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x5C06;&#x5D29;&#x6E83;&#x65E5;&#x5FD7;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x6216;&#x8005;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;            }
+</code></pre><ul>
+<li>Dsym<h6 id="a-&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x4FE1;&#x606F;&#x662F;-partially-symbolicated&#x90E8;&#x5206;&#x7B26;&#x53F7;&#x5316;&#x7684;-&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x5C06;&#x5176;&#x5B8C;&#x5168;&#x7B26;&#x53F7;&#x5316;-&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x662F;&#x81EA;&#x4E0B;&#x800C;&#x4E0A;&#x5C55;&#x793A;&#x7684;-&#x6700;&#x5148;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;-&#x5B8C;&#x5168;&#x7B26;&#x53F7;&#x5316;&#x8981;&#x501F;&#x52A9;-dsym-&#x6587;&#x4EF6;-&#x901A;&#x8FC7;-xcode---window---organizer---&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5305;---show-in-finder---&#x6253;&#x5F00;&#x5305;&#x5185;&#x5BB9;&#x62F7;&#x8D1D;&#x51FA;&#x6765;">a. &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x4FE1;&#x606F;&#x662F; (Partially Symbolicated),&#x90E8;&#x5206;&#x7B26;&#x53F7;&#x5316;&#x7684;. &#x63A5;&#x4E0B;&#x6765;&#x8981;&#x5C06;&#x5176;&#x5B8C;&#x5168;&#x7B26;&#x53F7;&#x5316;. (&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x662F;&#x81EA;&#x4E0B;&#x800C;&#x4E0A;)&#x5C55;&#x793A;&#x7684;, &#x6700;&#x5148;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;). &#x5B8C;&#x5168;&#x7B26;&#x53F7;&#x5316;&#x8981;&#x501F;&#x52A9; dsym &#x6587;&#x4EF6;, &#x901A;&#x8FC7; xcode -&gt; window -&gt; organizer -&gt; &#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5305; -&gt; show in finder -&gt; &#x6253;&#x5F00;&#x5305;&#x5185;&#x5BB9;,&#x62F7;&#x8D1D;&#x51FA;&#x6765;.</h6>
+<h6 id="b-atos">b. atos</h6>
+&#x7136;&#x540E;&#x4F7F;&#x7528;atos&#x547D;&#x4EE4;&#x5B8C;&#x6210;&#x7B26;&#x53F7;&#x5316;,&#x5177;&#x4F53;&#x547D;&#x4EE4;:$ atos -arch <binary architecture=""> -o <path to="" dsym="" file=""></path>/Contents/Resources/DWARF/<binary image="" name=""> -l <load address=""> <address to="" symbolicate="">&#x5176;&#x4E2D;: 
+ Binary Architecture: arm64&#x3001;armv6&#x3001;armv7 armv7s &#x9879;&#x76EE;&#x67B6;&#x6784;&#x3002;
+Path to dSYM file: dSYM&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;
+binary image name: &#x5DE5;&#x7A0B;&#x7684;&#x540D;&#x5B57;&#x3002;
+load address: &#x57FA;&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x5D29;&#x6E83;&#x65E5;&#x5FD7;&#x4E2D;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x53BB;&#x8BA1;&#x7B97;:load address = address to symbolicate - offset,&#x6BD4;&#x5982;&#xFF1A;0x0000000102838119&#x8F6C;&#x5316;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x4E3A;4337139993,&#x518D;&#x51CF;&#x53BB;&#x504F;&#x79FB;&#x91CF;265,&#x4E3A;4337139728,&#x5728;&#x8F6C;&#x5316;&#x4E3A;&#x5341;&#x516D;&#x8FDB;&#x5236;0x0000000102838010<pre><code>address to symbolicate:&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x3002;
+</code></pre>&#x8FD9;&#x65F6;&#x547D;&#x4EE4;&#x5C31;&#x4F1A;&#x8F93;&#x51FA;&#x7B26;&#x53F7;&#x5316;&#x7684;&#x4FE1;&#x606F;. <h2 id="3-&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x6536;&#x96C6;">3. &#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x6536;&#x96C6;</h2>
+bugly,&#x53CB;&#x76DF;, talking data, flurry, bugHD. &#x539F;&#x7406;&#x662F;&#x5BF9;&#x7CFB;&#x7EDF;&#x4EA7;&#x751F;&#x7684;Crash&#x65E5;&#x5FD7;&#x8FDB;&#x884C;&#x63D0;&#x53D6;,&#x5C01;&#x88C5;, &#x7136;&#x540E;&#x4E0A;&#x4F20;&#x5230;&#x4ED6;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5668;&#x505A;&#x7EDF;&#x8BA1;&#x5904;&#x7406;.
+&#x4F18;&#x70B9;:&#x96C6;&#x6210;&#x65B9;&#x4FBF;&#x5FEB;&#x901F;, &#x4E00;&#x822C;&#x90FD;&#x6709;&#x5B8C;&#x5584;&#x7684;&#x7BA1;&#x7406;&#x9762;&#x677F;,&#x5E76;&#x5DF2;&#x7ECF;&#x5B8C;&#x5168;&#x7B26;&#x53F7;&#x5316;.
+&#x6CE8;&#x610F;&#x70B9;: &#x5F15;&#x5165;&#x591A;&#x4E2A;&#x4F1A;&#x5BFC;&#x81F4; NSSetUncaughtExceptionHandler()&#x51FD;&#x6570;&#x6307;&#x9488;&#x88AB;&#x8986;&#x76D6;. &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x5C06;&#x51FD;&#x6570;&#x6307;&#x9488;&#x5F53;&#x53C2;&#x6570;&#x4F20;&#x9012;, &#x53EA;&#x8981;&#x91CD;&#x590D;&#x8C03;&#x7528;&#x5C31;&#x4F1A;&#x88AB;&#x8986;&#x76D6;.</address></load></binary></binary></li>
+</ul>
+<p><a href="https://developer.apple.com/library/content/technotes/tn2151/_index.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./#单例滥用的坏处" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2018年5月记录">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2018年6月1日","level":"1.3","depth":1,"previous":{"title":"2018年5月记录","level":"1.2","depth":1,"anchor":"#单例滥用的坏处","path":"README.md","ref":"README.md#单例滥用的坏处","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Crash收集.md","mtime":"2018-06-01T07:13:14.258Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-01T07:13:42.932Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
